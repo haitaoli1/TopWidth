@@ -13,4 +13,5 @@ git clone https://github.com/haitaoli1/TopWidth.git
 
 go to the directory TopWidth, run the example notebook "example.nb". 
 
+# Contacts
 If you have any problem, contact Haitao Li by haitao.li@sdu.edu.cn. 
