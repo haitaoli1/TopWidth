@@ -8,6 +8,9 @@ Please make sure Mathematica can initialize the code through "\<\<HPL`". If not 
 
 # Download
 Download the package through 
+
 git clone https://github.com/haitaoli1/TopWidth.git
 
-go to the directory TopWidth, run the example notebook
+go to the directory TopWidth, run the example notebook "example.nb". 
+
+If you have any problem, contact Haitao Li by haitao.li@sdu.edu.cn. 
