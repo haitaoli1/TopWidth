@@ -22,8 +22,8 @@ order = 0, 1, or 2; The QCD corrections are calculated accordingly;
 mbCorr=0 or 1; if mbCorr=1, the b mass effects included at LO in QCD for order = 0, NLO in QCD for order=1;  mb effects in NNLO QCD is not available;
 WwidthCorr=0 or 1; When WwidthCorr=0  the on-shell W is produced in top quark decay; WwidthCorr=1, the off-shell effects included up to NNLO in QCD according to order;
 EWcorr=0 or 1; For EWcorr=1 and order>=1, the NLO EWcorrections are included.";
-SetParameters::usage="TopWidth Function::SetParameters[mtv,mbv,mwv,wwidthv,GFv];
-set the parameters for mt, mw, mb, wwidth and GF.
+SetParameters::usage="TopWidth Function::SetParameters[mtv,mbv,mwv,wwidthv,mzv,GFv];
+set the parameters for mt, mw, mb, wwidth, mz, and GF.
 ";
 
 
@@ -40,10 +40,10 @@ rep2Num=Symbol["Global`rep2Num"];*)
 (*Protected[repbeta, alsGeneralb2,alphasb2, X0, X1, Xl, Xh, XF, XA, X2, \[CapitalGamma]0, Li2, gammat,mbFun0,mbFun1,mbgammat ];*)
 (* default parameter settings *)
 Vtb=1;
-SetParameters[mtv_,mbv_,mwv_,wwidthv_,GFv_]:=Module[{},
-rep2Num={mt->mtv,mb->mbv,mw->mwv, \[CapitalGamma]w-> wwidthv,GF-> GFv};
+SetParameters[mtv_,mbv_,mwv_,wwidthv_,mzv_,GFv_]:=Module[{},
+rep2Num={mt->mtv,mb->mbv,mw->mwv, \[CapitalGamma]w-> wwidthv,GF-> GFv,mz-> mzv};
 ]
-rep2Num ={mt-> 17269/100,GF-> 11663788 10^-12, mb-> 478/100, mw->80377/1000 , \[CapitalGamma]w-> 2085/1000};
+rep2Num ={mt-> 17269/100,GF-> 11663788 10^-12, mb-> 478/100, mw->80377/1000 , \[CapitalGamma]w-> 2085/1000, mzv-> 91.1876};
 TopWidth[QCDorder_, mbCorr_, WwidthCorr_, EWcorr_, mu_]:=Module[{gt},
 gt=0;
 If[QCDorder<0 || QCDorder>2, Print["Please check the input of QCDorder: QCDorder should be 0,1,2;" Return[0]]];
@@ -52,7 +52,7 @@ If[WwidthCorr!=0 && WwidthCorr!=1, Print["Please check the input of WwidthCorr: 
 If[EWcorr!=0 && EWcorr!=1, Print["Please check the input of EWcorr: EWcorr should be 0 or 1;" Return[0]]];
 If[WwidthCorr==0, gt=tWidth0[QCDorder,mu];];
 If[mbCorr==1, gt=gt+tWdithmbcorr[QCDorder,mu]];
-If[EWcorr==1,gt=gt+tWidthEW[mu]];
+If[EWcorr==1 && QCDorder>0,gt=gt+tWidthEW[mu]];
 If[WwidthCorr==1,gt=gt+tWidthGammaW[QCDorder,mu]];
 gt//N
 ];
@@ -93,7 +93,7 @@ nIntegrate[f_,w_]:=Module[{x},
 ];
 
 
-tWidthEW[mu_]:=CalEW[91.1876,mw/.rep2Num,125,mt/.rep2Num,4.78,91.1876,GF/.rep2Num][[2]];
+tWidthEW[mu_]:=CalEW[mz/.rep2Num,mw/.rep2Num,125,mt/.rep2Num,mb/.rep2Num,mz/.rep2Num,GF/.rep2Num][[2]];
 
 (* running alphas-- approxiedmated 3loop results *)
 repbeta={\[Beta]0-> 11-(2 nf)/3, \[Beta]1-> 102-(38 nf)/3,\[Beta]2-> 2857/2-(5033 nf)/18+(325 nf^2)/54};
