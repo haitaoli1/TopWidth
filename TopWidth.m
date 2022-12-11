@@ -4,10 +4,10 @@
 (*TopWidth*)
 
 
-Print["         (****** TopWidth-0.0 ******)  "];
+Print["         (****** TopWidth-1.0 ******)  "];
 Print["    Authors: Long-Bin Chen, Hai Tao Li, Jian Wang, YeFan Wang"];
 Print["    TopWidth[QCDorder, mbCorr, WwidthCorr, EWcorr, mu] is provided for top width calculations "];
-Print["    Please cite the paper for reference: arXiv:2211:XXXXX"];
+Print["    Please cite the paper for reference: arXiv:2212:XXXXX"];
 Print[""];
 
 
