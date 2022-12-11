@@ -25,7 +25,6 @@ EWcorr=0 or 1; For EWcorr=1 and order>=1, the NLO EWcorrections are included.";
 SetParameters::usage="TopWidth Function::SetParameters[mtv,mbv,mwv,wwidthv,GFv];
 set the parameters for mt, mw, mb, wwidth and GF.
 ";
-CalEW::usage="TopWidth Function EW corrections:"
 
 
 
