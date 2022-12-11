@@ -22,10 +22,12 @@ order = 0, 1, or 2; The QCD corrections are calculated accordingly;
 mbCorr=0 or 1; if mbCorr=1, the b mass effects included at LO in QCD for order = 0, NLO in QCD for order=1;  mb effects in NNLO QCD is not available;
 WwidthCorr=0 or 1; When WwidthCorr=0  the on-shell W is produced in top quark decay; WwidthCorr=1, the off-shell effects included up to NNLO in QCD according to order;
 EWcorr=0 or 1; For EWcorr=1 and order>=1, the NLO EWcorrections are included.";
+
 SetParameters::usage="TopWidth Function::SetParameters[mtv,mbv,mwv,wwidthv,mzv,GFv];
 set the parameters for mt, mw, mb, wwidth, mz, and GF.
 ";
 
+alphasb2::usage="TopWidth Function::alphasb2[Q2] returns the strong coupling";
 
 
 Begin["`Private`"]
@@ -93,10 +95,10 @@ tWidthEW[mu_]:=CalEW[mz/.rep2Num,mw/.rep2Num,125,mt/.rep2Num,mb/.rep2Num,mz/.rep
 repbeta={\[Beta]0-> 11-(2 nf)/3, \[Beta]1-> 102-(38 nf)/3,\[Beta]2-> 2857/2-(5033 nf)/18+(325 nf^2)/54};
 alsGeneralb2[Q2_]:=  -((4 \[Pi] \[Beta]0)/\[Beta]1) 1/(1-(\[Beta]2 \[Beta]0)/\[Beta]1^2+ProductLog[-1,-(\[Beta]0/\[Beta]1 ) (lam2General/Q2)^(\[Beta]0^2/\[Beta]1) Exp[(\[Beta]2 \[Beta]0)/\[Beta]1^2-1]])/.repbeta//Simplify;
 
-(* \[CapitalLambda]^2 from alphas[(*mz*) 91.1876] == 0.118  *)
-lamb2Nf5={lam2General->0.16668689669525621`};
-(* when mu>mt, nf=5, new \[CapitalLambda]^2 is provided *)
-lamb2Nf6={lam2General->0.021763628679063205`};
+(* \[CapitalLambda]^2 from alphas[(*mz*) 91.1876] == 0.1179  *)
+lamb2Nf5={lam2General->35833299/217400561};
+(* when mu>mt, nf=6, new \[CapitalLambda]^2 is provided *)
+lamb2Nf6={lam2General->745646218155/34690546734116};
 alphasb2[mu2_]:=If[ mu2>= (mt^2/.rep2Num), alsGeneralb2[mu2]/.lamb2Nf6/.nf-> 6, 
 alsGeneralb2[mu2]/.lamb2Nf5/.nf-> 5
 ]
