@@ -11,7 +11,7 @@ Download the package through
 
 git clone https://github.com/haitaoli1/TopWidth.git
 
-go to the directory TopWidth, run the example notebook "example.nb". 
+go to the directory "TopWidth", run the example notebook "example.nb". 
 
 # Functions 
 TopWidth[order, mbCorr, WwidthCorr, EWcorr, mu] returns the top quark width in the Standard Model;

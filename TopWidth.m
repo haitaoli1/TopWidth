@@ -29,20 +29,14 @@ set the parameters for mt, mw, mb, wwidth, mz, and GF.
 
 
 Begin["`Private`"]
-(*Symbol["HPL`HPL"];
-HPL=Symbol["HPL`HPL"];*)
-(*mt=Symbol["Global`mt"];
-mw=Symbol["Global`mw"];
-mb=Symbol["Global`mb"];
-\[CapitalGamma]w=Symbol["Global`\[CapitalGamma]w"];
-GF=Symbol["Global`GF"];
-rep2Num=Symbol["Global`rep2Num"];*)
-(*Protected[repbeta, alsGeneralb2,alphasb2, X0, X1, Xl, Xh, XF, XA, X2, \[CapitalGamma]0, Li2, gammat,mbFun0,mbFun1,mbgammat ];*)
-(* default parameter settings *)
+
 Vtb=1;
+(* Set Parameters*)
 SetParameters[mtv_,mbv_,mwv_,wwidthv_,mzv_,GFv_]:=Module[{},
 rep2Num={mt->mtv,mb->mbv,mw->mwv, \[CapitalGamma]w-> wwidthv,GF-> GFv,mz-> mzv};
 ]
+(* default parameter settings *)
+(* taken from PDG 2022 *)
 rep2Num ={mt-> 17269/100,GF-> 11663788 10^-12, mb-> 478/100, mw->80377/1000 , \[CapitalGamma]w-> 2085/1000, mzv-> 91.1876};
 TopWidth[QCDorder_, mbCorr_, WwidthCorr_, EWcorr_, mu_]:=Module[{gt},
 gt=0;
@@ -125,10 +119,9 @@ mbgammat=(GF mt^3 Vtb^2)/(16 Sqrt[2] \[Pi]) ( matF0 -2 /3 \[Alpha]s/\[Pi] matF1 
 
 
 
-
-
 (*EWcorrection*)
 EWParmeter[mzV_,mwV_,mhV_,mtV_,mbV_,SacleMuV_,GFV_]:={mz->mzV,mw->mwV,mh->mhV,mt->mtV,mb->mbV,ScaleMu->SacleMuV,GF->GFV};
+(* for EW corrections always take b quark as massive *)
 CalEW[mzV_,mwV_,mhV_,mtV_,mbV_,SacleMuV_,GFV_]:=CalEW[EWParmeter[mzV,mwV,mhV,mtV,mbV,SacleMuV,GFV]];
 (*NumInput={mz->91.1876,mw->80.377,mh->125,mt->172.69,mb->4.78,ScaleMu->91.1876,GF->1.16638*10^(-5)};*)
 Epsilon=1;
