@@ -18,10 +18,9 @@ TopWidth[order, mbCorr, WwidthCorr, EWcorr, mu] returns the top quark width in t
 order = 0, 1, or 2; The QCD corrections are calculated accordingly;
 mbCorr=0 or 1; if mbCorr=1, the b mass effects included at LO in QCD for order = 0, NLO in QCD for order=1;  mb effects in NNLO QCD is not available;
 WwidthCorr=0 or 1; When WwidthCorr=0  the on-shell W is produced in top quark decay; WwidthCorr=1, the off-shell effects included up to NNLO in QCD according to order;
-EWcorr=0 or 1; For EWcorr=1 and order>=1, the NLO EWcorrections are included.";
+EWcorr=0 or 1; For EWcorr=1 and order>=1, the NLO EWcorrections are included.;
 
-SetParameters::usage="TopWidth Function::SetParameters[mtv,mbv,mwv,wwidthv,GFv];
-set the parameters for mt, mw, mb, wwidth and GF.
+SetParameters:: SetParameters[mtv,mbv,mwv,wwidthv,mz, GFv]  set the parameters for mt, mw, mb, wwidth, mz, and GF.
 
 # Contacts
 If you have any problem, contact Haitao Li by haitao.li@sdu.edu.cn. 
