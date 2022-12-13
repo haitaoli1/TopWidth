@@ -22,5 +22,10 @@ EWcorr=0 or 1; For EWcorr=1 and order>=1, the NLO EWcorrections are included.;
 
 SetParameters:: SetParameters[mtv,mbv,mwv,wwidthv,mz, GFv]  set the parameters for mt, mw, mb, wwidth, mz, and GF.
 
+# License
+TopWidth is covered by the GNU General Public License 3.
+
+TopWidth is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
 # Contacts
 If you have any problem, contact Haitao Li by haitao.li@sdu.edu.cn. 
