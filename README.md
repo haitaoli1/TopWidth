@@ -2,9 +2,9 @@
 Mathematica Package to calculate the top decay width with NNLO corrections  in QCD and NLO corrections in EW. 
 
 # Requirement 
-The HPL package is required to generate the numerics of the harmonic polylogarithm, which can be download from https://krone.physik.uzh.ch/data/HPL/ .  
+The HPL package is required to generate the numerics of the harmonic polylogarithm, which can be downloaded from https://krone.physik.uzh.ch/data/HPL/ .  
 
-HPL is supposed to be initialized through "\<\<HPL`". If not plase  set the path "$HPLPath="the:\path\of\the\installation".
+HPL is supposed to be initialized through "\<\<HPL`". If not please  set the path "$HPLPath="the:\path\of\the\installation".
 
 # Download
 Download the package through 
@@ -25,7 +25,7 @@ SetParameters:: SetParameters[mtv,mbv,mwv,wwidthv,mz, GFv]  set the parameters f
 # License
 TopWidth is covered by the GNU General Public License 3.
 
-TopWidth is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+TopWidth is free software. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 or any later version of the License.
 
 # Contacts
 If you have any problem, contact Haitao Li by haitao.li@sdu.edu.cn. 
