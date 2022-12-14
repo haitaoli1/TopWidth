@@ -25,8 +25,8 @@ SetParameters:: SetParameters[mtv,mbv,mwv,wwidthv,mz, GFv]  set the parameters f
 # Reference 
 
 If TopWidth is used in your reasrach please cite our paper   
-"{Analytic result for the top-quark width at next-to-next-to-leading order in QCD}", by Long-Bin Chen, Hai Tao Li, Jian Wang, Yefan Wang, arXiv:2212.06341
-}
+"Analytic result for the top-quark width at next-to-next-to-leading order in QCD", by Long-Bin Chen, Hai Tao Li, Jian Wang, Yefan Wang, arXiv:2212.06341
+
 
 # License
 TopWidth is covered by the GNU General Public License 3.
