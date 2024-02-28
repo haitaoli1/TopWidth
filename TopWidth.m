@@ -68,7 +68,7 @@ als = alphasb2[mu^2];
 Return[((GF*mt^3Vtb^2)/(8Sqrt[2]\[Pi])/.rep2Num)(
 x0 + als/\[Pi] x1 + 
 If[QCDorder>=2, (als/\[Pi])^2 (x2 + 1/4 x1 (11-(2 (5+threshold))/3)Log[mu^2/(mt^2/.rep2Num)] ),0]+
-If[QCDorder==3, (als/\[Pi])^3 (x3-1/48 (3 (-37) x1+8 (-23) x2) Log[mu^2/mt^2]+1/144 (23)^2 x1 Log[mu^2/mt^2]^2)/.rep2Num,0] 
+If[QCDorder==3, (als/\[Pi])^3 (x3+29/12 x1 Log[mu^2/mt^2] + 23/6 x2 Log[mu^2/mt^2] + 529/144 x1 Log[mu^2/mt^2]^2)/.rep2Num,0] 
 )//N[#,20]&];
 ]
 
@@ -94,7 +94,7 @@ als = alphasb2[mu^2];
 Return[
 ((GF*mt^3Vtb^2)/(8Sqrt[2]\[Pi])/.rep2Num)(x0 + als/\[Pi] x1 + 
 If[x2!=0, (als/\[Pi])^2 (x2 + 1/4 x1 (11-(2 (5+threshold))/3)Log[mu^2/(mt^2/.rep2Num)] ),0]+
-If[x3!=0, (als/\[Pi])^3 (x3-1/48 (3 (-37) x1+8 (-23) x2) Log[mu^2/mt^2/.rep2Num]+1/144 (23)^2 x1 Log[mu^2/mt^2/.rep2Num]^2),0]
+If[x3!=0, (als/\[Pi])^3 (x3 + 29/12 x1 Log[mu^2/mt^2] + 23/6 x2 Log[mu^2/mt^2] + 529/144 x1 Log[mu^2/mt^2]^2/.rep2Num),0]
 )//N];
 ];
 nIntegrate[f_,w_]:=Module[{x},
