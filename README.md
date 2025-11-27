@@ -26,6 +26,7 @@ SetParameters:: SetParameters[mtv,mbv,mwv,wwidthv,mz, GFv]  set the parameters f
 
 If TopWidth is used in your research please cite our paper   
 [1] "Analytic result for the top-quark width at next-to-next-to-leading order in QCD", by Long-Bin Chen, Hai Tao Li, Jian Wang, Yefan Wang, arXiv:2212.06341.
+
 [2] "Analytic three-loop QCD corrections to top-quark and semileptonic b->u decays", by Long-Bin Chen, Hai Tao Li, Zhao Li, Jian Wang, Yefan Wang, Quan-Feng Wu, arXiv:2309.00762.
 
 # License
